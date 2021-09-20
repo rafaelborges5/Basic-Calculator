@@ -1,0 +1,117 @@
+from math import *
+print("If you want to exponentiate a number please enter \"e\" in the place of the operator")
+print("If you want to root a number please enter \"r\" in the place of the operator")
+op = input("Please enter the operation here: ")
+
+def calc(operation):
+    count = 0
+    for index in operation:
+        if index.isnumeric() == True:
+            count += 1
+        else:
+            break
+    return count
+
+
+factor1 = op[0: calc(op)]
+operator = op[calc(op)]
+factor2 = op[calc(op) + 1:]
+inv_input = False
+
+
+try:
+    if operator == "/":
+        print(float(factor1) / float(factor2))
+    elif operator == "*":
+        print(float(factor1) * float(factor2))
+    elif operator == "+":
+        print(float(factor1) + float(factor2))
+    elif operator == "-":
+        print(float(factor1) - float(factor2))
+    elif operator == "e":
+        print(pow(float(factor1), float(factor2)))
+    elif operator == "r":
+        def root_function(num, root):
+            answer = num ** (1 / root)
+            return answer
+
+
+        print(root_function(float(factor1), float(factor2)))
+    else:
+        print("Invalid input")
+        inv_input = True
+except:
+    print("Invalid input")
+    inv_input = True
+
+
+
+# In case the input is invalid
+
+
+
+while inv_input == True:
+    op = input("Please enter the operation here: ")
+
+
+    def calc(operation):
+        count = 0
+        for index in operation:
+            if index.isnumeric() == True:
+                count += 1
+            else:
+                break
+        return count
+
+    try:
+        factor1 = op[0: calc(op)]
+        operator = op[calc(op)]
+        factor2 = op[calc(op) + 1:]
+
+        if operator == "/":
+            print(float(factor1) / float(factor2))
+            inv_input = False
+        elif operator == "*":
+            print(float(factor1) * float(factor2))
+            inv_input = False
+        elif operator == "+":
+            print(float(factor1) + float(factor2))
+            inv_input = False
+        elif operator == "-":
+            print(float(factor1) - float(factor2))
+            inv_input = False
+        elif operator == "e":
+            print(pow(float(factor1), float(factor2)))
+            inv_input = False
+        elif operator == "r":
+            def root_function(num, root):
+                answer = num ** (1 / root)
+                return answer
+
+
+            print(root_function(float(factor1), float(factor2)))
+            inv_input = False
+        else:
+            print("Invalid input")
+            inv_input = True
+    except:
+        print("Invalid input")
+        inv_input = True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
